@@ -6,8 +6,11 @@ if (isset($_GET['id'])) {
     require 'includes/tracker.php';
 
     $track = new LinkTracker($_GET['id']);
-    //echo "<pre>", print_r($track->link), "</pre>";
-    include 'view/dynamic.php';
+    if (isset($track->link)) {
+    	include 'view/dynamic.php';
+    } else {
+    	include 'view/static.php';
+    }
 } else {
     include 'view/static.php';
 }

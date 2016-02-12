@@ -101,7 +101,7 @@ class LinkTracker {
 			return false;
 		}
 		$c = $this->cookie();
-		if ($c == 1) {
+		if ($c < 4) {
 			$this->mongo();
 		}
 		
