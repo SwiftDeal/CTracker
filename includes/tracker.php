@@ -97,9 +97,6 @@ class LinkTracker {
 	}
 
 	public function process() {
-		if (!$this->is_ajax()) {
-			return false;
-		}
 		$c = $this->cookie();
 		if ($c < 4) {
 			$this->mongo();

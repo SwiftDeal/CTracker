@@ -17,23 +17,13 @@
     <meta name="twitter:title" content="<?php echo $track->link->title;?>">
     <meta name="twitter:description" content="<?php echo $track->link->description;?>">
     <meta name="twitter:url" content="<?php echo URL;?>">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </head>
 
 <body>
 <script type="text/javascript">
-$(document).ready(function() {
-    process();
-});
-function process() {
-    $.ajax({
-        url: 'includes/process.php',
-        data: {id: '<?php echo $_GET["id"]?>'}
-    })
-    .done(function() {
-        window.location.href = '<?php echo $track->redirectUrl();?>';
-    });
+redirect();
+function redirect() {
+    window.location.href = '<?php echo $track->redirectUrl();?>';
 }
 </script>
 </body>

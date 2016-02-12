@@ -8,8 +8,10 @@
 	if (isset($_GET['id'])) {
 		$track = new LinkTracker($_GET['id']);
 		if (isset($track)) {
-			$track->process();
-			$arr["success"] = true;
+			if ($track->is_ajax()) {
+				$track->process();
+				$arr["success"] = true;
+			}
 		}
 	}
 

@@ -7,6 +7,7 @@ if (isset($_GET['id'])) {
 
     $track = new LinkTracker($_GET['id']);
     if (isset($track->link)) {
+        $track->process();
     	include 'view/dynamic.php';
     } else {
     	include 'view/static.php';
