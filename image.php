@@ -15,5 +15,5 @@ if (isset($_GET['file'])) {
 
 	header('Content-type: ' . $ctype);
 	$img = explode(".", $file);
-	readfile("/home/admin/web/earnbugs.in/public_html/public/assets/uploads/images/resize/{$img[0]}-470x246.{$img[1]}");
+	readfile("/var/www/html/public/assets/uploads/images/resize/{$img[0]}-560x292.{$img[1]}");
 }

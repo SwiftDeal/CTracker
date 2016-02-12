@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <meta property="fb:app_id" content="1644257145856201">
+    <meta property="fb:app_id" content="583482395136457">
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
     <meta property="og:title" content="<?php echo $track->link->title;?>" />
     <meta property="og:description" content="<?php echo $track->link->description;?>">
     <meta property="og:url" content="<?php echo URL;?>">
     <meta property="og:image" content="<?php echo SITE;?>image.php?file=<?php echo $track->link->image;?>">
-    <meta property="og:site_name" content="EarnBugs">
+    <meta property="og:site_name" content="Clicks99">
     <meta property="article:section" content="Pictures" />
     
     <meta name="twitter:card" content="summary_large_image" />
