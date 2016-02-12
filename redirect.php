@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Kolkata');
 global $track;
 if (isset($_GET['id'])) {
     require 'includes/config.php';
