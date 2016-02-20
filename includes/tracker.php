@@ -61,7 +61,7 @@ class LinkTracker {
 	}
 
 	public function redirectUrl() {
-		$track = "?utm_source=".$this->link->user_id."&utm_medium=Clicks99&utm_campaign=".$this->link->title;
+		$track = "?utm_source=". $this->link->user_id ."&utm_medium=Clicks99&utm_campaign=".$this->link->title."&utm_term=".$this->link->user_id."&utm_content=".$this->link->title;
 		$string = str_replace("'", '-', $this->removeEmoji($this->link->url).$track);
 		return $string;
 	}
@@ -98,7 +98,7 @@ class LinkTracker {
 
 	public function process() {
 		$c = $this->cookie();
-		if ($c < 4) {
+		if ($c == 1) {
 			$this->mongo();
 		}
 		
@@ -106,7 +106,12 @@ class LinkTracker {
 
 	public function mongo() {
 		$today = strftime("%Y-%m-%d", strtotime('now'));
-		$country = $this->country();
+		try {
+			$country = $this->country();
+		} catch (\Exception $e) {
+			$country = "IN";
+			//log the process
+		}
 		
 		$m = new MongoClient();
 		$db = $m->stats;
