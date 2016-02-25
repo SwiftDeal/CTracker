@@ -100,11 +100,17 @@ class LinkTracker {
 		$c = $this->cookie();
 		if ($c == 1) {
 			$this->mongo();
-		}
-		
+		}	
 	}
 
-	public function mongo() {
+	public function vprocess() {
+		$c = $this->cookie();
+		if ($c == 1) {
+			$this->mongo("vclicks");
+		}	
+	}
+
+	public function mongo($collection = "clicks") {
 		$today = strftime("%Y-%m-%d", strtotime('now'));
 		try {
 			$country = $this->country();
@@ -115,7 +121,7 @@ class LinkTracker {
 		
 		$m = new MongoClient();
 		$db = $m->stats;
-		$clicks = $db->clicks;
+		$clicks = $db->$collection;
 		$doc = array(
 			'link_id' => $this->link->link_id,
 			'item_id' => $this->link->item_id,
