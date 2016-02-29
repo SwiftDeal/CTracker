@@ -10,7 +10,7 @@
 			$track = new LinkTracker($_GET['id']);
 			if (isset($track)) {
 				if ($track->is_ajax()) {
-					$track->vprocess();
+					$track->process();
 					$arr["success"] = true;
 				} else {
 					$arr["success"] = "Not Ajax Request";
